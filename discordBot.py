@@ -43,4 +43,4 @@ async def spelling(ctx):
     await ctx.send(sarcasm)
 
 
-client.run('NjkzOTM4MzM4NjMzMDg5MTg2.XoEXMA.ae2h7IDoLxxGcfyiU7Lh4x4MBnA')
+client.run('TOKEN')
