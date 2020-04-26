@@ -42,5 +42,8 @@ async def spelling(ctx):
 
     await ctx.send(sarcasm)
 
+@client.command(aliases=['Your did it'])
+async def your(ctx):
+    await ctx.send(file=discord.File('yourDidIt.jpg'))
 
 client.run('TOKEN')
