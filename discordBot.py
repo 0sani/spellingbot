@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 import random
-import re
 
 client = commands.Bot(command_prefix = '.')
 
@@ -15,12 +14,12 @@ async def on_ready():
 async def on_member_join(member):
     print(f'{member} has joined a server')
 
-#idk why this is here
+#sends a weird discord emoji that one of my friends made
 @client.command(aliases=['emoji'])
 async def cursed_emoji(ctx):
     await ctx.send(file=discord.File('cursedKevinImage.png'))
 
-#leftover from a tutorial my friends like it idk why its here
+#8ball question, you ask it a question using .8ball and it randomly generates an answer
 @client.command(aliases=['8ball'])
 async def _8ball(ctx,*, question):
     responses = [
@@ -33,7 +32,7 @@ async def _8ball(ctx,*, question):
     await ctx.send(f'Question: {question}\nAnswer: {random.choice(responses)}')
 
 
-#I CaN SpElL GuYs
+#Generates the sarcasm text from the message immediately before the .spelling command
 @client.command()
 async def spelling(ctx):
     x= await ctx.channel.history(limit=2).flatten()
@@ -49,18 +48,18 @@ async def spelling(ctx):
     await ctx.send(sarcasm)
 
 
-#ioausf ausiof asiof iouaqw uioawio uioua your did it
+#sends the yourDitIt.jpg image to the channel
 @client.command(aliases=['Your did it'])
 async def your(ctx):
     await ctx.send(file=discord.File('yourDidIt.jpg'))
 
 
-#alkjsfjkl afsafsj klfas kjla kljafs kljfa slkj im did it
+#sends the imdidit.jpg image to the channel
 @client.command()
 async def im(ctx):
     await ctx.send(file=discord.File('imdidit.png'))
 
-#bubble wrap text thing idk what I'm doing I never comment my code
+#bubble wrap text thing
 @client.command()
 async def bubble(ctx,*,line):
     n = 3
